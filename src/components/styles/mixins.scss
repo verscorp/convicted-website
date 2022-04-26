@@ -1,0 +1,14 @@
+$screen-sm-min: 576px;
+$screen-tab-min: 1024px;
+
+@mixin phone() {
+  @media screen and (max-width: #{$screen-sm-min}) {
+    @content;
+  }
+}
+
+@mixin tab() {
+  @media screen and (max-width: #{$screen-tab-min}) {
+    @content;
+  }
+}

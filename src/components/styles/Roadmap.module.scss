@@ -1,0 +1,87 @@
+@import "./mixins";
+
+.roadmap {
+  margin-top: 8em;
+
+  @include phone() {
+    width: 94%;
+    margin-left: 3%;
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 3em;
+
+  @include phone() {
+    display: block;
+  }
+
+  & .block {
+    padding-top: 2em;
+    border: 1px dashed #A7A7A7;
+    border-bottom: none;
+    padding-bottom: 3em;
+    box-sizing: border-box;
+
+
+    @include phone() {
+      border-right: none;
+    }
+
+    &:nth-child(even) {
+      //background-color: red;
+      border-right: none;
+      padding-left: 8em;
+      margin-left: -1px;
+
+      @include phone() {
+        padding-left: 2em;
+        margin-left: 0;
+      }
+    }
+
+    &:nth-child(odd) {
+      //background-color: blue;
+      border-left: none;
+      padding-left: 4em;
+
+      @include phone() {
+        padding-left: 2em;
+        border-left: 1px dashed #A7A7A7;
+      }
+    }
+  }
+
+
+}
+
+.roadmapContentTitle {
+  font-family: 'Do Hyeon';
+  font-weight: 400;
+  word-spacing: 0.5em;
+  font-size: 30px;
+
+  @include phone() {
+    font-size: 18px;
+  }
+}
+
+.roadmapContentDescr {
+  color: #A7A7A7;
+  font-size: 22px;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  font-weight: normal;
+  &:before {
+    content: '\2013';
+    margin-right: 5px;
+    transform: scale(1.2);
+  }
+
+  @include phone() {
+    font-size: 16px;
+  }
+}
